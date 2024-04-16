@@ -11,7 +11,7 @@ const Resident = () => {
     return (
         <div>
             <div className='text-center space-y-3 mb-10 mt-16'>
-                <h2 className='text-5xl text-center font-bold'>Our Residential Houses</h2>
+                <h2 className='text-5xl text-center font-bold'>Our Estate</h2>
                 <p>Highlight the best of your properties by using the List Category shortcode. <br /> You can list categories, types, cities, areas and states of your choice.</p>
             </div>
             <div className='grid grid-cols-3 gap-6'>

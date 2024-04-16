@@ -14,6 +14,7 @@ import Blog from './components/Blog.jsx';
 import AuthProvider from './components/AuthProvider.jsx';
 import NotFound from './components/NotFound.jsx';
 import EstateDetails from './components/EstateDetails.jsx';
+import BlogDetails from './components/BlogDetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -40,12 +41,18 @@ const router = createBrowserRouter([
       },
       {
         path: '/blog',
-        element: <Blog></Blog>
+        element: <Blog></Blog>,
+        loader : () => fetch('blogs.json')
       },
       {
         path : '/estate/:id',
         element : <EstateDetails></EstateDetails>,
         loader : () => fetch('residents.json')
+      },
+      {
+        path : '/blogs/:id',
+        element : <BlogDetails></BlogDetails>,
+        loader : () => fetch('blogs.json')
       }
     ]
   },
