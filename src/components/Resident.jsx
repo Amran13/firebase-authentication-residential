@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Resident = () => {
     const [residents, setResidents] = useState([])
@@ -22,17 +23,10 @@ const Resident = () => {
                             <p> Segment :  {resident.segment_name} </p>
                             <p><span className='font-bold'>Price :</span> {resident.price} </p>
                                 <p className='text-lg'> Type :  {resident.status} </p>
-                            <p><span className='font-bold'>Area :</span> {resident.area} </p>
                             <p> <span className='font-bold'>Location :</span> {resident.location} </p>
-                            <div className="card-actions justify-center my-3">
-                                {
-                                    resident.facilities.map(fecility => <div key={resident.facilities[fecility]} className="badge badge-outline">
-                                        {fecility}
-                                    </div>)
-                                }
-                            </div>
+                            
                             <div className="card-actions justify-center">
-                                <button className="btn btn-primary">Buy Now</button>
+                                <Link to={`/estate/${resident.id}`} className="btn btn-primary hover:text-white"> View Details </Link>
                             </div>
                         </div>
                     </div>)

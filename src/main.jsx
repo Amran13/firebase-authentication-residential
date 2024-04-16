@@ -13,6 +13,7 @@ import RentProperty from './components/RentProperty.jsx';
 import Blog from './components/Blog.jsx';
 import AuthProvider from './components/AuthProvider.jsx';
 import NotFound from './components/NotFound.jsx';
+import EstateDetails from './components/EstateDetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
       {
         path: '/blog',
         element: <Blog></Blog>
+      },
+      {
+        path : '/estate/:id',
+        element : <EstateDetails></EstateDetails>,
+        loader : () => fetch('residents.json')
       }
     ]
   },
